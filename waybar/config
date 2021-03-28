@@ -1,0 +1,101 @@
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 21, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/arrow1", "pulseaudio", "custom/arrow2", "memory","custom/arrow3", "clock", "custom/arrow4", "tray", "custom/arrow5", "custom/powermenu"],
+    // Modules configuration
+     "sway/workspaces": {
+         "disable-scroll": false,
+         "all-outputs": true,
+         "current-only": false,
+         "format": "{icon}",
+         "format-icons": {
+             "1": "BROWSER",
+             "2": "CONSOLE",
+             "3": "DISCORD",
+             "4": "WORK2",
+             "5": "WORK3",
+             "6": "WORK4",
+             "7": "WORK5",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 5
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+          "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+       // "format-alt": "{:%Y-%m-%d}"
+	  "interval": 1,
+          "format": "{:%H:%M:%S}",
+          "max-length": 25
+    },
+    "memory": {
+       // "format": "{}% "
+          "format": "{used:0.1f}G/{total:0.1f}G ",
+          "interval": 1,
+          "on-click": "alacritty -e bashtop"
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/powermenu": {
+    "format": "<span font='Font Awesome 5 Free 9'>{icon}</span>{}",
+    "format-icons": [""],
+    "interval": 3600,
+    "escape": true,
+    "on-click": "wlogout -p layer-shell &>/dev/null"
+    },
+     "custom/arrow1": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    }
+}
